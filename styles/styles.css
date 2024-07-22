@@ -1,0 +1,73 @@
+.row{
+    height: 100px;
+    width: 300px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 300px;
+    margin: auto
+}
+
+.col{
+    height: 100px;
+    width: 100px;
+    float: left;
+    cursor: pointer;
+}
+
+#row1, #row2{
+    border-bottom: 1px solid black;
+}
+
+#col2, #col5, #col8{
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    width: 98px;
+}
+
+h1{
+    text-align: center;
+}
+
+.controls{
+    text-align: center;
+    margin-top: 20px;
+}
+.checkedX.col::before{
+    content: "X";
+    color: red;
+    font-size: 100px;
+    position: absolute;
+    text-align: center;
+    width: 100px;
+}
+
+.checkedO.col::before{
+    content: "O";
+    color: blue;
+    font-size: 100px;
+    position: absolute;
+    text-align: center;
+    width: 100px;
+}
+
+.overlay{
+    background-color: black;
+    opacity: 0.8;
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    /*Center inner text*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+    z-index: 5;
+}
+.overlay.disabled{
+    display: none;
+}

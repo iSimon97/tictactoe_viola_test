@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    </head>
+    <body>
+        <h1>Tic Tac Toe</h1>
+        <div class="container">
+            <div class="overlay">Start Game...</div>
+            <div class="row" id="row1">
+                <div class="col" id="col1"></div>
+                <div class="col" id="col2"></div>
+                <div class="col" id="col3"></div>
+            </div>
+            <div class="row" id="row2">
+                <div class="col" id="col4"></div>
+                <div class="col" id="col5"></div>
+                <div class="col" id="col6"></div>
+            </div>
+            <div class="row" id="row3">
+                <div class="col" id="col7"></div>
+                <div class="col" id="col8"></div>
+                <div class="col" id="col9"></div>
+            </div>
+        </div>
+        <div class="controls">
+            <input type="text" id="gameId" placeholder="Enter Game ID">
+            <button id="saveGameId">Save Game ID</button>
+            <input type="radio" id="red" name="color" value="red" checked>
+            <label for="red" class="color_label">Red</label>
+            <input type="radio" id="blue" name="color" value="blue">
+            <label for="blue" class="color_label">Blue</label>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="scripts/scripts.js"></script>
+    </body>
+</html>
