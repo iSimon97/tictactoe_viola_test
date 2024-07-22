@@ -57,6 +57,7 @@ $('.col').click(function() {
     $.post('/api.php', {action: "move", gameId: myGameId, playerId: myPlayerId, col: colId}, function(data) {
         let jsonData = JSON.parse(data);
         if (jsonData.status === 'success') {
+            checkWinner();
             if(myColor == 'red'){
                 $("#" + colId).addClass("checkedX");
             }else if(myColor == 'blue'){
@@ -66,7 +67,6 @@ $('.col').click(function() {
             $(".overlay").html("Player 2s turn");
             $(".overlay").removeClass("disabled");
             waitForTurn();
-            checkWinner();
         }
     });
 });
@@ -76,6 +76,7 @@ function waitForTurn(){
         $.post('/api.php', {action: "waitForTurn", gameId: myGameId, playerId: myPlayerId}, function(data) {
             let jsonData = JSON.parse(data);
             if (jsonData.status === 'success') {
+                checkWinner();
                 //jsonData.colId contains the column id of the last move
                 if(myColor == 'red'){
                     $("#col" + jsonData.colId).addClass("checkedO");
